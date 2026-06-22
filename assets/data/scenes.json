@@ -1,0 +1,88 @@
+{
+  "_comment": "吴承学著作文库 - 全场景热区配置",
+  "_note": "坐标使用图片原始像素。type: action=触发模态框，book=打开 EPUB。点击图上指定区域即触发对应功能。",
+  "scenes": {
+    "login": {
+      "image": "assets/img/login.jpg",
+      "naturalSize": { "width": 8001, "height": 4501 },
+      "hotspots": [
+        {
+          "id": "login-area",
+          "type": "action",
+          "action": "login-inline",
+          "x": 5320,
+          "y": 2905,
+          "w": 1638,
+          "h": 223,
+          "label": "登录"
+        }
+      ]
+    },
+    "library": {
+      "image": "assets/img/library.jpg",
+      "naturalSize": { "width": 8001, "height": 4501 },
+      "hotspots": [
+        {
+          "id": "search-area",
+          "type": "action",
+          "action": "search-inline",
+          "x": 3800,
+          "y": 782,
+          "w": 1672,
+          "h": 293,
+          "label": "关键词检索"
+        },
+        {
+          "id": "book-1",
+          "type": "book",
+          "x": 170,
+          "y": 1681,
+          "w": 1554,
+          "h": 2096,
+          "title": "中国古代文体学研究",
+          "available": false
+        },
+        {
+          "id": "book-2",
+          "type": "book",
+          "x": 1787,
+          "y": 1660,
+          "w": 1458,
+          "h": 2160,
+          "title": "明小品",
+          "available": false
+        },
+        {
+          "id": "book-3",
+          "type": "book",
+          "x": 3309,
+          "y": 1660,
+          "w": 1394,
+          "h": 2149,
+          "title": "中国古代文体学研究-有道",
+          "available": true
+        },
+        {
+          "id": "book-4",
+          "type": "book",
+          "x": 4745,
+          "y": 1660,
+          "w": 1532,
+          "h": 2170,
+          "title": "中国古代文体形态研究",
+          "available": false
+        },
+        {
+          "id": "book-5",
+          "type": "book",
+          "x": 6309,
+          "y": 1660,
+          "w": 1320,
+          "h": 2202,
+          "title": "吴承学自选集",
+          "available": false
+        }
+      ]
+    }
+  }
+}
