@@ -31,7 +31,7 @@ window.WCX_BOOKS = [
         cover: 'assets/img/books/cover-wenti-zhonghua-dark.png',
         available: true,
         format: 'epub',
-        file: 'books/wentixueyanjiu.epub',
+        file: 'books/wentixueyanjiu.epub?v=20260815b',
     },
     {
         id: 'wenti-xingtai-3',
@@ -46,7 +46,7 @@ window.WCX_BOOKS = [
         cover: 'assets/img/books/cover-xingtai-3.png',
         available: true,
         format: 'txt',
-        file: 'texts/xingtai-3.txt',
+        file: 'texts/xingtai-3.txt?v=20260815b',
     },
     {
         id: 'binghu-qiuyue',
@@ -60,7 +60,7 @@ window.WCX_BOOKS = [
         cover: 'assets/img/books/cover-binghu.png',
         available: true,
         format: 'epub',
-        file: 'books/binghuqiuyue.epub',
+        file: 'books/binghuqiuyue.epub?v=20260815b',
     },
     {
         id: 'zhi-yong-shen-xia',

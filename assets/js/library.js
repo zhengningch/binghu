@@ -38,6 +38,10 @@
     const tocList = $('#tocList');
     const readerPrevBtn = $('#readerPrev');
     const readerNextBtn = $('#readerNext');
+    const readerSettingsBtn = $('#readerSettings');
+    const settingsModal = $('#settingsModal');
+    const settingsOkBtn = $('#settingsOk');
+    const settingsMask = $('#settingsMask');
 
     let currentBook = null;
     let epubBook = null;
@@ -344,8 +348,9 @@
 
     // ---- EPUB 阅读器 ----
     async function openEpubReader(book, opts = {}) {
-        // 隐藏 TXT 专用控件
+        // 显示通用控件（目录、设置、左右翻章按钮）
         readerTocBtn.style.display = '';
+        readerSettingsBtn.style.display = '';
         readerPrevBtn.style.display = '';
         readerNextBtn.style.display = '';
 
@@ -368,13 +373,15 @@
             height: containerH,
             spread: 'none',
             manager: 'default',
-            flow: 'paginated',
+            // 统一用 scrolled-doc：每章独立 iframe，章节内滚动浏览
+            // 左右按钮 = 翻章，上下方向键 = 章节内滚动
+            flow: 'scrolled-doc',
             snap: true,
             // 关键：禁用 epub.js 的 dpr 缩放
             scale: 1.0,
         });
 
-        epubRendition.themes.fontSize('110%');
+        epubRendition.themes.fontSize((localStorage.getItem('wcx_reader_fontsize') || '110') + '%');
         epubRendition.themes.override('color', '#2b2723', true);
         // 注意：不通过 themes.override 设 background，
         // 因为它会注入 inline `background:#f5ecd6 !important` shorthand，
@@ -396,6 +403,75 @@
             bgStyle.textContent = 'html,body{background-color:#f5ecd6 !important;background-image:url(\'' + paperBgUrl + '\') !important;background-size:768px 384px !important;background-repeat:repeat !important;background-attachment:fixed !important;}';
             (doc.head || doc.documentElement).appendChild(bgStyle);
         };
+        // 把微信读书 EPUB 中的注解 img 转为悬浮显示的 sup 标记
+        // 原始格式：<img class="qqreader-footnote" alt="注释内容" src="../Images/note.png" />
+        // 转换后：<sup class="fn-ref">[注]<span class="fn-tooltip">注释内容</span></sup>
+        const convertFootnotes = (doc) => {
+            if (!doc) return;
+            // 注入 tooltip 样式（用 id 去重）
+            if (!doc.getElementById('wcx-fn-style')) {
+                const style = doc.createElement('style');
+                style.id = 'wcx-fn-style';
+                style.textContent = [
+                    '.fn-ref{',
+                    '  position:relative;',
+                    '  display:inline-block;',
+                    '  vertical-align:super;',
+                    '  font-size:0.75em;',
+                    '  color:#8b6f3a;',
+                    '  cursor:pointer;',
+                    '  margin:0 1px;',
+                    '}',
+                    '.fn-ref::before{content:"[";}',
+                    '.fn-ref::after{content:"]";}',
+                    '.fn-tooltip{',
+                    '  position:absolute;',
+                    '  bottom:1.5em;',
+                    '  left:50%;',
+                    '  transform:translateX(-50%);',
+                    '  display:none;',
+                    '  min-width:200px;',
+                    '  max-width:340px;',
+                    '  padding:8px 12px;',
+                    '  background:#fff8e8;',
+                    '  color:#3a3025;',
+                    '  border:1px solid #c9a86b;',
+                    '  border-radius:4px;',
+                    '  box-shadow:0 2px 8px rgba(0,0,0,0.18);',
+                    '  font-size:12px;',
+                    '  line-height:1.55;',
+                    '  font-weight:normal;',
+                    '  white-space:normal;',
+                    '  text-align:left;',
+                    '  z-index:9999;',
+                    '  pointer-events:none;',
+                    '}',
+                    '.fn-ref:hover .fn-tooltip,',
+                    '.fn-ref.tapped .fn-tooltip{display:block;}',
+                ].join('\n');
+                (doc.head || doc.documentElement).appendChild(style);
+            }
+            // 转换所有未处理的 qqreader-footnote img
+            const imgs = doc.querySelectorAll('img.qqreader-footnote:not([data-wcx-fn])');
+            imgs.forEach((im) => {
+                im.setAttribute('data-wcx-fn', 'done');
+                const noteText = (im.getAttribute('alt') || '').trim();
+                if (!noteText) return;
+                const sup = doc.createElement('sup');
+                sup.className = 'fn-ref';
+                const span = doc.createElement('span');
+                span.className = 'fn-tooltip';
+                span.textContent = noteText;
+                sup.appendChild(doc.createTextNode('注'));
+                sup.appendChild(span);
+                // 移动端 tap 切换
+                sup.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    sup.classList.toggle('tapped');
+                });
+                im.parentNode.replaceChild(sup, im);
+            });
+        };
         const fixEpubIframe = () => {
             const ph = readerContainer.querySelector('.reader-placeholder');
             if (ph) ph.remove();
@@ -416,6 +492,8 @@
                 const doc = iframe.contentDocument;
                 if (doc && doc.readyState === 'complete') {
                     injectBgIntoDoc(doc);
+                    // 把微信读书的注解 img 转为悬浮 tooltip
+                    convertFootnotes(doc);
                     const fc = doc.querySelector('h1.frontCover');
                     if (fc) {
                         fc.style.setProperty('display', 'flex', 'important');
@@ -433,9 +511,9 @@
                         im.style.setProperty('height', 'auto', 'important');
                     });
                 } else {
-                    // iframe 尚未就绪，等待 load 后再注入
                     iframe.addEventListener('load', () => {
                         injectBgIntoDoc(iframe.contentDocument);
+                        convertFootnotes(iframe.contentDocument);
                     });
                 }
             });
@@ -452,6 +530,7 @@
                 const doc = iframe.contentDocument;
                 if (doc && doc.readyState === 'complete' && !doc.getElementById('wcx-paper-bg')) {
                     injectBgIntoDoc(doc);
+                    convertFootnotes(doc);
                 }
             });
         }, 300);
@@ -500,8 +579,9 @@
 
     // ---- TXT 阅读器 ----
     async function openTxtReader(book, opts = {}) {
-        // 隐藏 EPUB 专用的目录/翻页按钮（TXT 用滚动）
+        // TXT 也显示左右翻章按钮（与 EPUB 统一）
         readerTocBtn.style.display = '';
+        readerSettingsBtn.style.display = '';
         readerPrevBtn.style.display = '';
         readerNextBtn.style.display = '';
 
@@ -601,6 +681,38 @@
         return chapters;
     }
 
+    // 把含 【注N】内容【/注】 标记的文本追加到 element
+    // 标记转为悬浮注解 <sup class="fn-ref">注<span class="fn-tooltip">内容</span></sup>
+    function appendTxtWithNotes(element, text) {
+        const regex = /【注\d+】([\s\S]*?)【\/注】/g;
+        let lastIdx = 0;
+        let match;
+        while ((match = regex.exec(text)) !== null) {
+            // 标记前的纯文本
+            if (match.index > lastIdx) {
+                element.appendChild(document.createTextNode(text.slice(lastIdx, match.index)));
+            }
+            // 注解节点
+            const sup = document.createElement('sup');
+            sup.className = 'fn-ref';
+            sup.textContent = '注';
+            const span = document.createElement('span');
+            span.className = 'fn-tooltip';
+            span.textContent = match[1].trim();
+            sup.appendChild(span);
+            sup.addEventListener('click', (e) => {
+                e.preventDefault();
+                sup.classList.toggle('tapped');
+            });
+            element.appendChild(sup);
+            lastIdx = match.index + match[0].length;
+        }
+        // 剩余纯文本
+        if (lastIdx < text.length) {
+            element.appendChild(document.createTextNode(text.slice(lastIdx)));
+        }
+    }
+
     // 把章节文本按段落切分，支持两种分隔方式：
     // 1. 空行分隔（xingtai-3.txt 用此方式，可能是 \n\n 或 \r\n\r\n）
     // 2. 每行一段（zhiyongshenxia.txt 用此方式，段首 4 空格缩进标记新段）
@@ -628,13 +740,28 @@
 
         const bodyEl = document.createElement('div');
         bodyEl.className = 'txt-chapter-body';
+        bodyEl.style.fontSize = (localStorage.getItem('wcx_reader_fontsize') || '110') + '%';
         // 按段落分割（支持空行分隔和缩进分隔两种格式）
         const paragraphs = splitTxtParagraphs(ch.text);
         paragraphs.forEach((p) => {
             const para = document.createElement('p');
-            para.textContent = p;
+            // 处理 【注N】内容【/注】 标记，转为悬浮注解
+            appendTxtWithNotes(para, p);
             bodyEl.appendChild(para);
         });
+        // 注入 TXT 注解 tooltip 样式
+        if (!bodyEl.querySelector('#wcx-txt-fn-style')) {
+            const style = document.createElement('style');
+            style.id = 'wcx-txt-fn-style';
+            style.textContent = [
+                '.fn-ref{position:relative;display:inline-block;vertical-align:super;font-size:0.75em;color:#8b6f3a;cursor:pointer;margin:0 1px;}',
+                '.fn-ref::before{content:"[";}',
+                '.fn-ref::after{content:"]";}',
+                '.fn-tooltip{position:absolute;bottom:1.5em;left:50%;transform:translateX(-50%);display:none;min-width:200px;max-width:340px;padding:8px 12px;background:#fff8e8;color:#3a3025;border:1px solid #c9a86b;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.18);font-size:12px;line-height:1.55;font-weight:normal;white-space:normal;text-align:left;z-index:9999;pointer-events:none;}',
+                '.fn-ref:hover .fn-tooltip,.fn-ref.tapped .fn-tooltip{display:block;}',
+            ].join('\n');
+            bodyEl.appendChild(style);
+        }
         container.appendChild(bodyEl);
 
         readerContainer.innerHTML = '';
@@ -708,35 +835,43 @@
         });
     }
 
-    // ---- 键盘处理 ----
+    // ---- 键盘处理（EPUB/TXT 统一）----
     function setupKeyboardHandler() {
         const keyHandler = (e) => {
             if (readerOverlay.classList.contains('hidden')) return;
-            if (currentBook && currentBook.format === 'txt') {
-                if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+            // 设置面板打开时不响应快捷键
+            if (settingsModal && !settingsModal.classList.contains('hidden')) {
+                if (e.key === 'Escape') {
+                    settingsModal.classList.add('hidden');
+                    e.preventDefault();
+                }
+                return;
+            }
+            // 统一交互：左右键 = 翻章，上下方向键 = 章节内滚动（默认行为，不拦截）
+            if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                if (currentBook && currentBook.format === 'txt') {
                     if (txtCurrentChapter > 0) {
                         txtCurrentChapter--;
                         renderTxtChapter();
                     }
-                } else if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+                } else {
+                    epubRendition?.prev();
+                }
+                e.preventDefault();
+            } else if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+                if (currentBook && currentBook.format === 'txt') {
                     if (txtCurrentChapter < txtChapters.length - 1) {
                         txtCurrentChapter++;
                         renderTxtChapter();
                     }
-                    e.preventDefault();
-                } else if (e.key === 'Escape') {
-                    closeReader();
-                }
-            } else {
-                if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-                    epubRendition?.prev();
-                } else if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                } else {
                     epubRendition?.next();
-                    e.preventDefault();
-                } else if (e.key === 'Escape') {
-                    closeReader();
                 }
+                e.preventDefault();
+            } else if (e.key === 'Escape') {
+                closeReader();
             }
+            // ArrowUp/ArrowDown 不拦截，让浏览器自然滚动
         };
         readerOverlay._keyHandler && document.removeEventListener('keydown', readerOverlay._keyHandler);
         readerOverlay._keyHandler = keyHandler;
@@ -831,8 +966,11 @@
         currentBook = null;
         // 恢复控件显示
         readerTocBtn.style.display = '';
+        readerSettingsBtn.style.display = '';
         readerPrevBtn.style.display = '';
         readerNextBtn.style.display = '';
+        // 关闭可能打开的设置面板
+        settingsModal.classList.add('hidden');
         setTimeout(() => {
             readerContainer.innerHTML = '<div class="reader-placeholder"><p class="placeholder-text">已关闭阅读器</p></div>';
         }, 200);
@@ -842,6 +980,34 @@
     readerTocBtn.addEventListener('click', () => {
         readerTocPanel.classList.toggle('hidden');
         readerTocBtn.classList.toggle('active');
+    });
+
+    // ============== 阅读设置（字号）==============
+    function updateSettingsUI() {
+        const size = localStorage.getItem('wcx_reader_fontsize') || '110';
+        const radio = document.querySelector(`input[name="fontSize"][value="${size}"]`);
+        if (radio) radio.checked = true;
+    }
+    readerSettingsBtn.addEventListener('click', () => {
+        updateSettingsUI();
+        settingsModal.classList.remove('hidden');
+    });
+    settingsMask.addEventListener('click', () => {
+        settingsModal.classList.add('hidden');
+    });
+    settingsOkBtn.addEventListener('click', async () => {
+        const checked = document.querySelector('input[name="fontSize"]:checked');
+        const size = checked ? checked.value : '110';
+        localStorage.setItem('wcx_reader_fontsize', size);
+        settingsModal.classList.add('hidden');
+        // 应用字号
+        if (epubRendition) {
+            epubRendition.themes.fontSize(size + '%');
+        }
+        const txtBody = document.querySelector('.txt-chapter-body');
+        if (txtBody) {
+            txtBody.style.fontSize = size + '%';
+        }
     });
 
     // ============== Toast ==============
