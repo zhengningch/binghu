@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>著作文库 · 吴承学</title>
     <link rel="stylesheet" href="assets/css/style.css?v=20260815">
-    <link rel="stylesheet" href="assets/css/library.css?v=20260815k">
+    <link rel="stylesheet" href="assets/css/library.css?v=20260815m">
 </head>
 <body class="page-library">
 
@@ -45,6 +45,7 @@
             <div class="reader-title" id="readerTitle">书籍</div>
             <div class="reader-actions">
                 <button class="reader-btn" id="readerToc" type="button" title="目录">目</button>
+                <button class="reader-btn" id="readerSettings" type="button" title="设置">⚙</button>
                 <button class="reader-btn" id="readerPrev" type="button" title="上一页">‹</button>
                 <button class="reader-btn" id="readerNext" type="button" title="下一页">›</button>
             </div>
@@ -61,6 +62,37 @@
             <h3 class="toc-title">目录</h3>
             <ol class="toc-list" id="tocList"></ol>
         </nav>
+
+        <!-- 阅读设置面板 -->
+        <div class="modal hidden" id="settingsModal">
+            <div class="modal-mask" id="settingsMask"></div>
+            <div class="modal-body settings-body">
+                <h3 class="modal-title">阅读设置</h3>
+                <div class="settings-row">
+                    <label class="settings-label">字号</label>
+                    <div class="settings-options">
+                        <label class="settings-option">
+                            <input type="radio" name="fontSize" value="90">
+                            <span>小</span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="fontSize" value="100">
+                            <span>标准</span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="fontSize" value="110">
+                            <span>大</span>
+                        </label>
+                        <label class="settings-option">
+                            <input type="radio" name="fontSize" value="125">
+                            <span>特大</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="settings-hint">左右键翻章，上下键章节内滚动。</div>
+                <button class="btn btn-primary modal-ok" id="settingsOk" type="button">确定</button>
+            </div>
+        </div>
     </div>
 
     <!-- Toast -->
@@ -80,7 +112,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js"></script>
 
-    <script src="assets/js/books.js?v=20260815c"></script>
-    <script src="assets/js/library.js?v=20260815z"></script>
+    <script src="assets/js/books.js?v=20260815d"></script>
+    <script src="assets/js/library.js?v=20260815ad"></script>
 </body>
 </html>
