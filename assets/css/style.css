@@ -1,0 +1,115 @@
+/* =========================================================
+   吴承学著作文库 - 全站基础样式
+   设计语言：中式古典 · 水墨 · 朱印 · 米黄宣纸
+   ========================================================= */
+
+/* 自定义宋刻字体 */
+@font-face {
+    font-family: 'HYChangLiSong';
+    src: url('../fonts/HYCHANGLISONGKEBENTRUINGS.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* 主色 */
+    --paper: #f3ebd9;            /* 米黄宣纸 */
+    --paper-deep: #e8dcc1;       /* 深米 */
+    --paper-light: #f8f2e3;      /* 浅米 */
+    --ink: #2b2723;              /* 墨黑 */
+    --ink-soft: #5b524a;         /* 软墨 */
+    --ink-faint: #8a8278;        /* 淡墨 */
+    --vermilion: #b8392f;        /* 朱砂红 */
+    --vermilion-deep: #8e2419;
+    --vermilion-soft: #d65a4f;
+    --jade: #4a7466;             /* 古典绿 */
+    --gold: #b48a3c;             /* 暗金 */
+
+    /* 字体 */
+    --font-serif: "HYChangLiSong", "Noto Serif SC", "Songti SC", "STSong", "Source Han Serif SC",
+        "FangSong", "STFangsong", "KaiTi", "STKaiti", "SimSun", serif;
+    --font-kai: "HYChangLiSong", "Noto Serif SC", "KaiTi", "STKaiti", "楷体", serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+
+    /* 阴影 */
+    --shadow-book: 0 6px 18px rgba(75, 55, 30, 0.18),
+                   0 1px 3px rgba(75, 55, 30, 0.12);
+    --shadow-book-hover: 0 14px 32px rgba(75, 55, 30, 0.28),
+                         0 2px 6px rgba(75, 55, 30, 0.18);
+
+    /* 过渡 */
+    --ease: cubic-bezier(.4, .14, .3, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    color: var(--vermilion);
+    text-decoration: none;
+    transition: color .2s var(--ease);
+}
+a:hover { color: var(--vermilion-deep); }
+
+/* === 通用按钮 === */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--ink-soft);
+    border-radius: 2px;
+    font-family: var(--font-serif);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .2s var(--ease);
+}
+.btn:hover {
+    background: var(--ink);
+    color: var(--paper-light);
+}
+.btn-primary {
+    background: var(--vermilion);
+    color: var(--paper-light);
+    border-color: var(--vermilion-deep);
+}
+.btn-primary:hover {
+    background: var(--vermilion-deep);
+    color: var(--paper-light);
+}
+
+/* === 滚动条 === */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: var(--ink-faint);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--ink-soft); }
+
+/* === 通用工具类 === */
+.hidden { display: none !important; }
+.text-mute { color: var(--ink-faint); }
+.text-center { text-align: center; }
+.mt-2 { margin-top: 16px; }
+.mt-4 { margin-top: 32px; }

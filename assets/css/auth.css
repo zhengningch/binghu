@@ -1,0 +1,152 @@
+/* =========================================================
+   登录页样式
+   - 底图 cover 铺满全屏
+   - 登录框无背景无边框，直接贴在图上
+   - 位置按设计稿百分比精确定位
+   ========================================================= */
+
+.page-login {
+    background: #ebeae6;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* === 全屏背景 === */
+.bg-paper {
+    position: fixed;
+    inset: 0;
+    background-color: #ebeae6;
+    z-index: 0;
+}
+
+.bg {
+    position: fixed;
+    inset: 0;
+    background: url('../img/login.jpg') center/cover no-repeat;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* === 登录区域（按设计稿百分比定位） === */
+.login-overlay {
+    position: fixed;
+    z-index: 6;
+    /* 设计稿：输入框中心 x=79.1%, y=69.6% */
+    left: 70%;
+    top: 69.6%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s var(--ease);
+}
+
+.login-overlay.is-ready {
+    opacity: 1;
+    visibility: visible;
+}
+
+.login-label {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.15em;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.login-overlay .login-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    /* 无背景、无边框——直接"贴"在图上 */
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(43, 39, 35, 0.15);
+    padding: 0 4px;
+    transition: border-color .2s var(--ease);
+}
+
+.login-overlay .login-form:focus-within {
+    border-bottom-color: var(--vermilion);
+}
+
+.login-overlay .login-input {
+    flex: 1;
+    height: 100%;
+    min-width: 200px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+    caret-color: var(--vermilion);
+}
+
+.login-overlay .login-input::placeholder {
+    color: var(--ink-faint);
+    opacity: 0.6;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.login-overlay .login-btn {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    color: var(--ink-soft);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color .2s var(--ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+}
+
+.login-overlay .login-btn:hover {
+    color: var(--vermilion);
+}
+
+.login-overlay .login-error {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 6px);
+    color: var(--vermilion);
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity .3s var(--ease);
+    background: rgba(255, 250, 235, 0.92);
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-family: var(--font-serif);
+}
+
+.login-overlay .login-error.show { opacity: 1; }
+
+/* === 响应式 === */
+@media (max-width: 768px) {
+    .login-overlay {
+        left: 50%;
+        top: 62%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    .login-overlay .login-input {
+        min-width: 200px;
+    }
+}

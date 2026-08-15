@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吴承学著作文库</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=20260815">
+    <link rel="stylesheet" href="assets/css/auth.css?v=20260815">
+</head>
+<body class="page-login">
+    <div class="bg-paper" aria-hidden="true"></div>
+    <div class="bg" id="bg" aria-hidden="true"></div>
+
+    <!-- 登录区域：无背景无边框，直接贴在图上 -->
+    <div class="login-overlay is-ready" id="loginOverlay">
+        <div class="login-label">登 录</div>
+        <form class="login-form" id="loginForm" autocomplete="off">
+            <input
+                type="text"
+                id="inviteCode"
+                name="invite"
+                class="login-input"
+                placeholder="请输入邀请码"
+                maxlength="32"
+                aria-label="邀请码"
+                required
+            >
+            <button type="submit" class="login-btn" aria-label="进入文库">↵</button>
+        </form>
+        <p class="login-error" id="loginError" role="alert"></p>
+    </div>
+
+    <script src="assets/js/auth.js?v=20260815"></script>
+</body>
+</html>
