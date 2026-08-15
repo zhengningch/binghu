@@ -550,41 +550,67 @@
 
     function splitTxtChapters(text) {
         const chapters = [];
-        // 匹配 "第X章" / "第X节" / "序" / "后记" 等
-        const regex = /(^|\n)\s*(第[零一二三四五六七八九十百千]+[章节篇卷]|[序跋自序引言凡例]\s*[言序]|后记|附录|前言|引言)/g;
-        let lastEnd = 0;
+        // 匹配章节标题：
+        // - "第N章/节/篇/卷"（N 支持中文数字和阿拉伯数字）
+        // - "序/跋/自序/引言/凡例/前言/后记/附录"
+        const regex = /(^|\n)\s*(第[零一二三四五六七八九十百千0-9]+[章节篇卷]|序|跋|自序|引言|凡例|前言|后记|附录)/g;
         let lastTitle = '正文';
         let match;
-        let startPos = 0;
+        let bodyStart = 0;
+        let started = false;
 
         while ((match = regex.exec(text)) !== null) {
-            if (chapters.length > 0 || match.index > 0) {
-                const chapterText = text.slice(startPos, match.index);
+            // 正则消耗的 match[0] 以 (^|\n)\s* 开头：跳过空白定位标题起点
+            const localOffset = match[0].search(/\S/);
+            const titleStart = match.index + (localOffset >= 0 ? localOffset : 0);
+            const lineEnd = text.indexOf('\n', titleStart);
+            const titleLine = text.slice(titleStart, lineEnd > -1 ? lineEnd : text.length);
+
+            if (started) {
+                // 保存上一章节（不含标题行）
+                const chapterText = text.slice(bodyStart, titleStart);
                 if (chapterText.trim().length > 0) {
                     chapters.push({
                         title: lastTitle,
                         text: chapterText,
-                        pos: startPos,
+                        pos: bodyStart,
                     });
                 }
             }
-            startPos = match.index;
-            // 提取标题行
-            const lineEnd = text.indexOf('\n', match.index);
-            lastTitle = text.slice(match.index, lineEnd > -1 ? lineEnd : match.index + 20).trim();
+            // 切换到新章节：标题行下一行
+            lastTitle = titleLine.trim();
+            bodyStart = lineEnd > -1 ? lineEnd + 1 : text.length;
+            started = true;
         }
         // 最后一段
-        if (startPos < text.length) {
-            chapters.push({
-                title: lastTitle,
-                text: text.slice(startPos),
-                pos: startPos,
-            });
+        if (bodyStart < text.length) {
+            const tail = text.slice(bodyStart).trim();
+            if (tail.length > 0) {
+                chapters.push({
+                    title: lastTitle,
+                    text: text.slice(bodyStart),
+                    pos: bodyStart,
+                });
+            }
         }
         if (chapters.length === 0) {
             chapters.push({ title: '全文', text: text, pos: 0 });
         }
         return chapters;
+    }
+
+    // 把章节文本按段落切分，支持两种分隔方式：
+    // 1. 空行分隔（xingtai-3.txt 用此方式，可能是 \n\n 或 \r\n\r\n）
+    // 2. 每行一段（zhiyongshenxia.txt 用此方式，段首 4 空格缩进标记新段）
+    function splitTxtParagraphs(chapterText) {
+        // 统一换行符：把 \r\n 和 \r 都转成 \n
+        const text = chapterText.replace(/\r\n?/g, '\n');
+        // 优先尝试空行分隔
+        let parts = text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+        if (parts.length > 1) return parts;
+        // 没有空行分隔：每行视为独立段落（去掉行首缩进）
+        const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+        return lines.length > 0 ? lines : [text];
     }
 
     function renderTxtChapter(offset, keyword) {
@@ -600,11 +626,11 @@
 
         const bodyEl = document.createElement('div');
         bodyEl.className = 'txt-chapter-body';
-        // 按段落分割
-        const paragraphs = ch.text.split(/\n\s*\n/).filter(p => p.trim());
+        // 按段落分割（支持空行分隔和缩进分隔两种格式）
+        const paragraphs = splitTxtParagraphs(ch.text);
         paragraphs.forEach((p) => {
             const para = document.createElement('p');
-            para.textContent = p.trim();
+            para.textContent = p;
             bodyEl.appendChild(para);
         });
         container.appendChild(bodyEl);
