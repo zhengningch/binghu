@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>著作文库 · 吴承学</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=20260815">
-    <link rel="stylesheet" href="assets/css/library.css?v=20260815m">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260905">
+    <link rel="stylesheet" href="assets/css/library.css?v=20260905">
 </head>
 <body class="page-library">
 
@@ -43,11 +43,13 @@
         <header class="reader-header">
             <button class="back-btn" id="backBtn" type="button">← 返回文库</button>
             <div class="reader-title" id="readerTitle">书籍</div>
+            <span class="reader-page-info hidden" id="readerPageInfo"></span>
             <div class="reader-actions">
+                <button class="reader-btn" id="readerSearch" type="button" title="检索本书">搜</button>
                 <button class="reader-btn" id="readerToc" type="button" title="目录">目</button>
                 <button class="reader-btn" id="readerSettings" type="button" title="设置">⚙</button>
-                <button class="reader-btn" id="readerPrev" type="button" title="上一页">‹</button>
-                <button class="reader-btn" id="readerNext" type="button" title="下一页">›</button>
+                <button class="reader-btn" id="readerPrev" type="button" title="上一页/上一章">‹</button>
+                <button class="reader-btn" id="readerNext" type="button" title="下一页/下一章">›</button>
             </div>
         </header>
         <div class="reader-container" id="readerContainer">
@@ -55,13 +57,28 @@
                 <p class="placeholder-text">正在加载书籍内容…</p>
             </div>
         </div>
+        <div class="pdf-hitbar hidden" id="pdfHitBar" role="status"></div>
         <div class="reader-progress">
             <div class="reader-progress-bar" id="readerProgressBar"></div>
         </div>
         <nav class="reader-toc hidden" id="readerTocPanel">
             <h3 class="toc-title">目录</h3>
+            <div class="page-jump hidden" id="pageJump">
+                <input type="number" id="pageJumpInput" min="1" placeholder="页码" aria-label="跳转页码">
+                <button type="button" class="page-jump-btn" id="pageJumpBtn">跳页</button>
+                <span class="page-jump-total" id="pageJumpTotal"></span>
+            </div>
             <ol class="toc-list" id="tocList"></ol>
         </nav>
+
+        <!-- 书内检索面板 -->
+        <div class="reader-search hidden" id="readerSearchPanel" role="search">
+            <h3 class="toc-title">检索本书</h3>
+            <input type="text" id="bookSearchInput" class="book-search-input"
+                placeholder="输入关键词，检索本书全部内容" autocomplete="off">
+            <div class="book-search-status hidden" id="bookSearchStatus"></div>
+            <ol class="book-search-list" id="bookSearchList"></ol>
+        </div>
 
         <!-- 阅读设置面板 -->
         <div class="modal hidden" id="settingsModal">
@@ -111,8 +128,9 @@
     <!-- epub.js (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
 
-    <script src="assets/js/books.js?v=20260815d"></script>
-    <script src="assets/js/library.js?v=20260815ad"></script>
+    <script src="assets/js/books.js?v=20260905"></script>
+    <script src="assets/js/library.js?v=20260906"></script>
 </body>
 </html>

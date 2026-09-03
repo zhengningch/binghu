@@ -13,7 +13,7 @@
  *   summary      : 简介
  *   cover        : 封面图片 URL
  *   available    : 是否可在线阅读（true 则点击打开阅读器）
- *   format       : 阅读格式 'epub' | 'txt'
+ *   format       : 阅读格式 'epub' | 'txt' | 'pdf'（pdf = 按 OCR 页面阅读，file 指向按页 JSON）
  *   file         : 文件路径（available=true 时必填）
  */
 
@@ -76,5 +76,21 @@ window.WCX_BOOKS = [
         available: true,
         format: 'txt',
         file: 'texts/zhiyongshenxia.txt',
+    },
+    {
+        id: 'wenti-xueshi-1',
+        title: '中国古代文体学史',
+        subtitle: '第一卷 · 先秦两汉文体学史',
+        author: '吴承学 李冠兰 著',
+        publisher: '北京大学出版社',
+        year: '2024',
+        isbn: '978-7-301-35474-2',
+        tags: ['文体学', '文体学史', '先秦', '两汉', '文体', '古代文学', '学术', '中国古代文体学'],
+        summary: '本卷为《中国古代文体学史》第一卷，系统考察先秦两汉时期中国文体学发生、发展的内部动因、形态特征与演变规律，兼采传世文献与出土文献，勾勒早期文体观念的发生与文体学的滥觞。',
+        cover: 'assets/img/books/cover-xianqin-removebg-preview.png',
+        available: true,
+        format: 'pdf',
+        file: 'texts/xianqin-parts/manifest.json?v=20260904',
+        ocr: 'texts/xianqin-wenti-xueshi.json?v=20260904',
     },
 ];

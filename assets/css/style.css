@@ -30,6 +30,9 @@
     --font-serif: "HYChangLiSong", "Noto Serif SC", "Songti SC", "STSong", "Source Han Serif SC",
         "FangSong", "STFangsong", "KaiTi", "STKaiti", "SimSun", serif;
     --font-kai: "HYChangLiSong", "Noto Serif SC", "KaiTi", "STKaiti", "楷体", serif;
+    /* 系统宋体（正文用，与 EPUB 阅读区实际回退效果一致；不含宋刻） */
+    --font-song: "Noto Serif SC", "Songti SC", "STSong", "Source Han Serif SC",
+        "SimSun", serif;
     --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC",
         "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
 
