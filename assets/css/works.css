@@ -61,7 +61,7 @@
 
 .works-entry-mark__hint {
     position: absolute;
-    left: calc(100% + 20px);
+    left: calc(100% + 8px);
     top: 50%;
     writing-mode: vertical-rl;
     text-orientation: upright;
