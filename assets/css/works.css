@@ -19,20 +19,44 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+/* 静默时：只留一抹朱红细柱 */
+.works-entry-mark__bar {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 6px;
+    height: min(46vh, 520px);
+    transform: translateY(-50%);
+    background: linear-gradient(180deg,
+        rgba(184, 57, 47, 0) 0%,
+        var(--vermilion) 14%,
+        var(--vermilion-deep) 52%,
+        rgba(184, 57, 47, 0) 100%);
+    border-radius: 0 2px 2px 0;
+    opacity: .8;
+    transition: opacity .3s var(--ease);
+    pointer-events: none;
+}
+
+/* 水波纹：鼠标靠近才浮现 */
 .works-entry-mark img {
     display: block;
     height: min(46vh, 520px);
     width: auto;
-    opacity: .3;
-    filter: saturate(.5);
-    transition: opacity .4s var(--ease), filter .4s var(--ease), transform .4s var(--ease);
+    opacity: 0;
+    transform: translateX(-16px);
+    transition: opacity .42s var(--ease), transform .42s var(--ease);
 }
 
 .works-entry-mark:hover img,
 .works-entry-mark:focus-visible img {
     opacity: 1;
-    filter: none;
-    transform: translateX(6px);
+    transform: translateX(0);
+}
+
+.works-entry-mark:hover .works-entry-mark__bar,
+.works-entry-mark:focus-visible .works-entry-mark__bar {
+    opacity: 0;
 }
 
 .works-entry-mark__hint {
@@ -1066,7 +1090,8 @@
     .mono__cover--plain .mono__fn { font-size: 16px; letter-spacing: .1em; }
 
     /* 窄屏上素材收窄，避免遮挡书卡 */
-    .works-entry-mark img { height: min(28vh, 280px); }
+    .works-entry-mark img,
+    .works-entry-mark__bar { height: min(28vh, 280px); }
     .works-entry-mark__hint { display: none; }
 }
 
