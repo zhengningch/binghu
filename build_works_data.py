@@ -1,1 +1,373 @@
-IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwojIC0qLSBjb2Rpbmc6IHV0Zi04IC0qLQoiIiIK5LuO44CK5ZC05om/5a2m5pWZ5o6I566A5LuL44CLZG9jeCDnlJ/miJDnq5nngrnjgIzokZfov7DooajjgI3mlbDmja7jgIIKCueUqOazle+8mgogICAgcHl0aG9uMyBidWlsZF93b3Jrc19kYXRhLnB5CgrovpPlhaXvvJrlkLTmib/lrabmlZnmjojnroDku4vvvIgyMDI2MDgwM++8iS5kb2N4Cui+k+WHuu+8mnNpdGUvYXNzZXRzL2RhdGEvd29ya3MuanNvbgoK6K6+6K6h5Y6f5YiZ77yaCiAgLSDlj6rlgZrjgIznu5PmnoTljJbliIfliIbjgI3vvIzkuI3nr6HmlLnljp/mlofjgILmr4/mnaHpg73kv53nlZkgcmF3IOWOn+aWh++8jOWJjeerr+WPr+WbnumAgOaYvuekuuOAggogIC0g6ICB5biI5pel5ZCO5aKe6KGl5p2h55uu77yM5Y+q6ZyA5pu05pawIGRvY3gg5YaN6YeN6LeR5pys6ISa5pys77yM5peg6ZyA5pS55YmN56uv5Luj56CB44CCCiIiIgoKaW1wb3J0IGRhdGV0aW1lCmltcG9ydCBqc29uCmltcG9ydCByZQppbXBvcnQgc3lzCmltcG9ydCB6aXBmaWxlCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aAoKUk9PVCA9IFBhdGgoX19maWxlX18pLnJlc29sdmUoKS5wYXJlbnQKRE9DWCA9IFJPT1QgLyAi5ZC05om/5a2m5pWZ5o6I566A5LuL77yIMjAyNjA4MDPvvIkuZG9jeCIKT1VUID0gUk9PVCAvICJzaXRlIiAvICJhc3NldHMiIC8gImRhdGEiIC8gIndvcmtzLmpzb24iCgpDTl9OVU0gPSAi5LiA5LqM5LiJ5Zub5LqU5YWt5LiD5YWr5Lmd5Y2BIgpSRV9IMSA9IHJlLmNvbXBpbGUociJe44CQKC4rPynjgJEkIikKUkVfSDIgPSByZS5jb21waWxlKHIiXihbIiArIENOX05VTSArIHIiXSsp44CBKC4rKSQiKQpSRV9IMyA9IHJlLmNvbXBpbGUociJe77yIKFsiICsgQ05fTlVNICsgciJdKynvvIkoLispJCIpClJFX1lFQVIgPSByZS5jb21waWxlKHIiXihcZHs0fSnlubQkIikKUkVfSVRFTSA9IHJlLmNvbXBpbGUociJe44CKKC4rPynjgIsoLiopJCIsIHJlLlMpClJFX05VTV9JVEVNID0gcmUuY29tcGlsZShyIl4oXGQrKVvvvI4u44CBXVxzKiguKykkIikKCgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiMg6K+75Y+WCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KZGVmIHJlYWRfcGFyYWdyYXBocyhwYXRoOiBQYXRoKToKICAgICIiIuaMieauteiQveaKveWPliBkb2N4IOe6r+aWh+acrO+8iOS/neaMgeWOn+Wni+mhuuW6j++8ieOAgiIiIgogICAgd2l0aCB6aXBmaWxlLlppcEZpbGUocGF0aCkgYXMgejoKICAgICAgICB4bWwgPSB6LnJlYWQoIndvcmQvZG9jdW1lbnQueG1sIikuZGVjb2RlKCJ1dGYtOCIpCiAgICBsaW5lcyA9IFtdCiAgICBmb3IgcCBpbiByZS5maW5kYWxsKHIiPHc6cFsgPl0uKj88L3c6cD4iLCB4bWwsIHJlLlMpOgogICAgICAgIHQgPSAiIi5qb2luKHJlLmZpbmRhbGwociI8dzp0W14+XSo+KC4qPyk8L3c6dD4iLCBwLCByZS5TKSkKICAgICAgICB0ID0gcmUuc3ViKHIiPFtePl0rPiIsICIiLCB0KQogICAgICAgIHQgPSAoCiAgICAgICAgICAgIHQucmVwbGFjZSgiJmFtcDsiLCAiJiIpCiAgICAgICAgICAgIC5yZXBsYWNlKCImbHQ7IiwgIjwiKQogICAgICAgICAgICAucmVwbGFjZSgiJmd0OyIsICI+IikKICAgICAgICAgICAgLnJlcGxhY2UoIlx1MjAwZiIsICIiKQogICAgICAgICAgICAucmVwbGFjZSgiXHVmZWZmIiwgIiIpCiAgICAgICAgICAgIC5zdHJpcCgpCiAgICAgICAgKQogICAgICAgIGlmIHQ6CiAgICAgICAgICAgIGxpbmVzLmFwcGVuZCh0KQogICAgcmV0dXJuIGxpbmVzCgoKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQojIOadoeebruWtl+auteaKveWPlgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClJFX1NJR04gPSByZS5jb21waWxlKHIi77yIKOe9suWQjVte77yJXSp85LiOW17vvIldKuWQiOS9nHzkuI5bXu+8iV0q5YWI55Sf5ZCI5L2cKe+8iSIpClJFX0pPVVJOQUwgPSByZS5jb21waWxlKHIi44CKKFte44CK44CLXSsp44CLIikKUkVfSVNTVUUgPSByZS5jb21waWxlKHIiKFxkezR9KeW5tOesrChcZCsp5pyfIikKUkVfUEFHRVMgPSByZS5jb21waWxlKHIi56ysKFtcZO+8kC3vvJldK1vigJRcLe+8jX7vvZ5dW1xk77yQLe+8mV0rfFtcZO+8kC3vvJldKylccyrpobUiKQpSRV9QUkVTU19EQVRFID0gcmUuY29tcGlsZShyIihcZHs0fSnlubQoXGR7MSwyfSnmnIgoXGR7MSwyfSnml6UiKQpSRV9QVUJfWUVBUiA9IHJlLmNvbXBpbGUociIoXGR7NH0p5bm0KFxkezEsMn0pP+aciD8iKQpSRV9QVUJMSVNIRVIgPSByZS5jb21waWxlKAogICAgciIoW1x1NGUwMC1cdTlmYTXCt117MiwxMn0/KD865Ye654mI56S+fOS5puWxgHzkuablupd85Y2w5Lmm6aaGfOWNsOS5pummhuaciemZkOWFrOWPuHzlh7rniYjmnInpmZDlhazlj7h85pyJ6ZmQ5YWs5Y+4fOS5puekvnzmlofnjK7lh7rniYjnpL585Y+k57GN5Ye654mI56S+KSkiCikKUkVfRURJVElPTiA9IHJlLmNvbXBpbGUociJe44CKKC4rPynjgIso77yIKFte77yJXSsp77yJKT8iKQoKCmRlZiBwYXJzZV9zaWduYXR1cmUodGV4dDogc3RyKToKICAgICIiIue9suWQjSAvIOWQiOS9nOaDheWGteOAgiIiIgogICAgbSA9IFJFX1NJR04uc2VhcmNoKHRleHQpCiAgICBpZiBub3QgbToKICAgICAgICByZXR1cm4gTm9uZQogICAgcyA9IG0uZ3JvdXAoMSkKICAgIGlmIHMuc3RhcnRzd2l0aCgi572y5ZCNIik6CiAgICAgICAgcmV0dXJuIHsidHlwZSI6ICJwc2V1ZG9ueW0iLCAidGV4dCI6IHMucmVwbGFjZSgi572y5ZCNIiwgIiIpfQogICAgcmV0dXJuIHsidHlwZSI6ICJjb2F1dGhvciIsICJ0ZXh0Ijogcy5yZXBsYWNlKCLkuI4iLCAiIikucmVwbGFjZSgi5ZCI5L2cIiwgIiIpfQoKCmRlZiBwYXJzZV9wYXBlcihyYXc6IHN0cik6CiAgICAiIiLorrrmlocgLyDluo/ot4sgLyDpmo/nrJTnrYnvvJrpopjlkI0gKyDlh7rlpITkv6Hmga/jgIIiIiIKICAgIGl0ZW0gPSB7InJhdyI6IHJhdywgInRpdGxlTWFyayI6ICLjgIoifQogICAgbSA9IFJFX0lURU0ubWF0Y2gocmF3KQogICAgaWYgbToKICAgICAgICBpdGVtWyJ0aXRsZSJdID0gbS5ncm91cCgxKQogICAgICAgIHJlc3QgPSBtLmdyb3VwKDIpCiAgICBlbHNlOgogICAgICAgICMg5LiN5Lul5Lmm5ZCN5Y+35byA5aS055qE5p2h55uu77yM5aaC44CMMjAxMeW5tOi1t++8jOS4u+e8luKAnOS4reWbveWPpOS7o+aWh+S9k+WtpueglOeptuS4m+S5puKAne+8iOS4juW9reeOieW5s+WQiOe8lu+8ie+8jOWMl+S6rOWkp+WtpuWHuueJiOekvuOAjQogICAgICAgICMg6aKY5ZCN57uf5LiA55So5Lmm5ZCN5Y+35ZGI546w77yI44CMMiDkuLvnvJbjgI3pmaTlpJbvvIzlkJHkuIvlhbzlrrnvvIkKICAgICAgICBtMiA9IHJlLm1hdGNoKHInXiguKj8pW+KAnCJdKFte4oCc4oCdIl0rKVvigJ0iXSguKikkJywgcmF3KQogICAgICAgIGlmIG0yOgogICAgICAgICAgICBpdGVtWyJwcmVmaXgiXSA9IG0yLmdyb3VwKDEpLnN0cmlwKCkKICAgICAgICAgICAgaXRlbVsidGl0bGUiXSA9IG0yLmdyb3VwKDIpCiAgICAgICAgICAgIGl0ZW1bInRpdGxlTWFyayJdID0gIuOAiiIKICAgICAgICAgICAgcmVzdCA9IG0yLmdyb3VwKDMpCiAgICAgICAgZWxzZToKICAgICAgICAgICAgbTMgPSByZS5tYXRjaChyJ14oLio/KeOAiiguKz8p44CLKC4qKSQnLCByYXcpCiAgICAgICAgICAgIGlmIG0zOgogICAgICAgICAgICAgICAgaXRlbVsicHJlZml4Il0gPSBtMy5ncm91cCgxKS5zdHJpcCgpCiAgICAgICAgICAgICAgICBpdGVtWyJ0aXRsZSJdID0gbTMuZ3JvdXAoMikKICAgICAgICAgICAgICAgIHJlc3QgPSBtMy5ncm91cCgzKQogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgaXRlbVsidGl0bGVNYXJrIl0gPSAiIgogICAgICAgICAgICAgICAgaXRlbVsidGl0bGUiXSA9IHJhdy5yc3RyaXAoIuOAgiIpCiAgICAgICAgICAgICAgICByZXN0ID0gIiIKICAgIGl0ZW1bInNpZ25hdHVyZSJdID0gcGFyc2Vfc2lnbmF0dXJlKHJlc3Qgb3IgcmF3KQoKICAgIHJlc3QgPSByZS5zdWIociJeW++8jCzjgIFdXHMqIiwgIiIsIHJlc3Quc3RyaXAoKSkucnN0cmlwKCLjgIIiKQoKICAgICMg5YiK54mpIC8g5oql57q4IC8g5paH6ZuGCiAgICBqbSA9IFJFX0pPVVJOQUwuc2VhcmNoKHJlc3QpCiAgICBpc3N1ZSA9IFJFX0lTU1VFLnNlYXJjaChyZXN0KQogICAgcGRhdGUgPSBSRV9QUkVTU19EQVRFLnNlYXJjaChyZXN0KQogICAgcGFnZXMgPSBSRV9QQUdFUy5zZWFyY2gocmVzdCkKCiAgICBpZiBpc3N1ZToKICAgICAgICBpdGVtWyJ2ZW51ZSJdID0gam0uZ3JvdXAoMSkgaWYgam0gZWxzZSAiIgogICAgICAgIGl0ZW1bImlzc3VlIl0gPSBpc3N1ZS5ncm91cCgxKSArICLlubTnrKwiICsgaXNzdWUuZ3JvdXAoMikgKyAi5pyfIgogICAgICAgIGl0ZW1bImtpbmQiXSA9ICJqb3VybmFsIgogICAgZWxpZiBwZGF0ZToKICAgICAgICAjIOaKpee6uOaXpeacn++8muW+gOWJjeWPluOAiuOAi+mHjOeahOaKpeWIiuWQjQogICAgICAgIGl0ZW1bInZlbnVlIl0gPSBqbS5ncm91cCgxKSBpZiBqbSBlbHNlICIiCiAgICAgICAgaXRlbVsiaXNzdWUiXSA9ICIlc+W5tCVz5pyIJXPml6UiICUgKHBkYXRlLmdyb3VwKDEpLCBwZGF0ZS5ncm91cCgyKSwgcGRhdGUuZ3JvdXAoMykpCiAgICAgICAgaXRlbVsia2luZCJdID0gIm5ld3NwYXBlciIKICAgIGVsaWYgIuaUtuWFpSIgaW4gcmVzdCBvciAi6L29IiBpbiByZXN0IG9yICLkuLvnvJYiIGluIHJlc3Q6CiAgICAgICAgaXRlbVsidmVudWUiXSA9IGptLmdyb3VwKDEpIGlmIGptIGVsc2UgIiIKICAgICAgICBpdGVtWyJpc3N1ZSJdID0gIiIKICAgICAgICBpdGVtWyJraW5kIl0gPSAiYW50aG9sb2d5IgogICAgZWxzZToKICAgICAgICBpdGVtWyJ2ZW51ZSJdID0gam0uZ3JvdXAoMSkgaWYgam0gZWxzZSAiIgogICAgICAgIGl0ZW1bImlzc3VlIl0gPSAiIgogICAgICAgIGl0ZW1bImtpbmQiXSA9ICJvdGhlciIKCiAgICBpZiBwYWdlczoKICAgICAgICBpdGVtWyJwYWdlcyJdID0gcGFnZXMuZ3JvdXAoMSkKICAgIGl0ZW1bInJlc3QiXSA9IHJlc3QKICAgIHJldHVybiBpdGVtCgoKZGVmIHBhcnNlX21vbm9ncmFwaChyYXc6IHN0cik6CiAgICAiIiLokZfkvZzvvJrkuablkI0gKyDniYjmrKEgKyDlh7rniYjnpL4gKyDlubTmnIjjgIIiIiIKICAgIGl0ZW0gPSB7InJhdyI6IHJhd30KICAgIG0gPSBSRV9FRElUSU9OLm1hdGNoKHJhdykKICAgIGl0ZW1bInRpdGxlIl0gPSBtLmdyb3VwKDEpIGlmIG0gZWxzZSByYXcKICAgIGl0ZW1bImVkaXRpb24iXSA9IChtLmdyb3VwKDMpIG9yICIiKS5zdHJpcCgpIGlmIG0gZWxzZSAiIgogICAgYm9keSA9IHJhd1ttLmVuZCgpOl0gaWYgbSBlbHNlIHJhdwogICAgYm9keSA9IHJlLnN1YihyIl5b77yMLF1ccyoiLCAiIiwgYm9keS5zdHJpcCgpKQoKICAgIHllYXJzID0gUkVfUFVCX1lFQVIuZmluZGFsbChib2R5KQogICAgaXRlbVsieWVhciJdID0geWVhcnNbLTFdWzBdIGlmIHllYXJzIGVsc2UgIiIKICAgIHBtID0gUkVfUFVCTElTSEVSLnNlYXJjaChib2R5KQogICAgaWYgcG06CiAgICAgICAgaXRlbVsicHVibGlzaGVyIl0gPSBwbS5ncm91cCgxKQogICAgZWxzZToKICAgICAgICAjIOW9ouWmguOAjOS4ieiBr+abuOW6l++8iOmmmea4r++8ieaciemZkOWFrOWPuOOAjeetiemdnuW4uOinhOWQjQogICAgICAgIHBtMiA9IHJlLnNlYXJjaChyIl4oW17vvIwsMC05XSs/KSg/PVxkezR95bm0KSIsIGJvZHkpCiAgICAgICAgaXRlbVsicHVibGlzaGVyIl0gPSBwbTIuZ3JvdXAoMSkuc3RyaXAoKSBpZiBwbTIgZWxzZSBib2R5CiAgICBpZiAi5ZCI5L2cIiBpbiByYXcgb3IgIuS4jiIgaW4gcmF3OgogICAgICAgIGl0ZW1bImNvYXV0aG9yIl0gPSBUcnVlCiAgICBpdGVtWyJib2R5Il0gPSBib2R5CiAgICByZXR1cm4gaXRlbQoKCmRlZiBwYXJzZV9hd2FyZChyYXc6IHN0cik6CiAgICAiIiLojrflpZbvvJrlubTku70gKyDkuovpobnjgIIiIiIKICAgIG0gPSByZS5tYXRjaChyIl4oXGR7NH0p5bm0W++8jCxdPyguKikkIiwgcmF3KQogICAgcmV0dXJuIHsKICAgICAgICAicmF3IjogcmF3LAogICAgICAgICJ5ZWFyIjogbS5ncm91cCgxKSBpZiBtIGVsc2UgIiIsCiAgICAgICAgInRleHQiOiAobS5ncm91cCgyKSBpZiBtIGVsc2UgcmF3KS5yc3RyaXAoIuOAgiIpLAogICAgfQoKCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIyDkuLvop6PmnpDvvJrnirbmgIHmnLoKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpkZWYgcGFyc2UobGluZXMpOgogICAgYm9keSA9IGxpbmVzWzE6XSBpZiBsaW5lcyBhbmQgbm90IGxpbmVzWzBdLnN0YXJ0c3dpdGgoIuOAkCIpIGVsc2UgbGluZXMKCiAgICBkYXRhID0gewogICAgICAgICJtZXRhIjogewogICAgICAgICAgICAicGVyc29uIjogIuWQtOaJv+WtpiIsCiAgICAgICAgICAgICJ0aXRsZSI6ICLlkLTmib/lrabmlZnmjojokZfov7DooagiLAogICAgICAgICAgICAiZ2VuZXJhdGVkIjogZGF0ZXRpbWUuZGF0ZS50b2RheSgpLmlzb2Zvcm1hdCgpLAogICAgICAgICAgICAic291cmNlIjogRE9DWC5uYW1lLAogICAgICAgICAgICAiYXNPZiI6ICIiLAogICAgICAgIH0sCiAgICAgICAgInByb2ZpbGUiOiBbXSwKICAgICAgICAiY291cnNlcyI6IFtdLAogICAgICAgICJsaXRlcmF0dXJlIjogW10sICAgIyDjgJDokZfov7Dmg4XlhrXjgJEKICAgICAgICAiYXdhcmRzIjogW10sICAgICAgICMg44CQ6I635aWW5oOF5Ya144CRCiAgICB9CgogICAgc2VjdGlvbiA9IE5vbmUgICAgICAgICAgIyDpobblsYLvvJrjgJDln7rmnKzkv6Hmga/jgJHigKYKICAgIGdyb3VwID0gTm9uZSAgICAgICAgICAgICMg5LqM57qn77ya5LiA44CB56CU56m25oiQ5p6cCiAgICBzdWIgPSBOb25lICAgICAgICAgICAgICAjIOS4iee6p++8mu+8iOS4gO+8ieiRl+S9nAogICAgeWVhciA9IE5vbmUgICAgICAgICAgICAgIyDorrrmloflubTku70KCiAgICBkZWYgY3VycmVudF9saXN0KCk6CiAgICAgICAgIiIi6L+U5Zue5b2T5YmN5bqU5YaZ5YWl55qE5p2h55uu5a655Zmo44CCIiIiCiAgICAgICAgaWYgc2VjdGlvbiA9PSAicHJvZmlsZSI6CiAgICAgICAgICAgIHJldHVybiBkYXRhWyJwcm9maWxlIl0KICAgICAgICBpZiBzZWN0aW9uID09ICJjb3Vyc2VzIjoKICAgICAgICAgICAgcmV0dXJuIGRhdGFbImNvdXJzZXMiXQogICAgICAgIGlmIHNlY3Rpb24gPT0gImxpdGVyYXR1cmUiOgogICAgICAgICAgICByZXR1cm4gZGF0YVsibGl0ZXJhdHVyZSJdCiAgICAgICAgaWYgc2VjdGlvbiA9PSAiYXdhcmRzIjoKICAgICAgICAgICAgcmV0dXJuIGRhdGFbImF3YXJkcyJdCiAgICAgICAgcmV0dXJuIE5vbmUKCiAgICBmb3IgcmF3IGluIGJvZHk6CiAgICAgICAgbTEgPSBSRV9IMS5tYXRjaChyYXcpCiAgICAgICAgaWYgbTE6CiAgICAgICAgICAgIG5hbWUgPSBtMS5ncm91cCgxKQogICAgICAgICAgICBzZWN0aW9uID0geyLln7rmnKzkv6Hmga8iOiAicHJvZmlsZSIsICLlvIDorr7or77nqIsiOiAiY291cnNlcyIsCiAgICAgICAgICAgICAgICAgICAgICAgIuiRl+i/sOaDheWGtSI6ICJsaXRlcmF0dXJlIiwgIuiOt+WlluaDheWGtSI6ICJhd2FyZHMifS5nZXQobmFtZSwgbmFtZSkKICAgICAgICAgICAgaWYgc2VjdGlvbiA9PSAibGl0ZXJhdHVyZSI6CiAgICAgICAgICAgICAgICBkYXRhWyJsaXRlcmF0dXJlIl0gPSB7InRpdGxlIjogbmFtZSwgImdyb3VwcyI6IFtdfQogICAgICAgICAgICBlbGlmIHNlY3Rpb24gPT0gImF3YXJkcyI6CiAgICAgICAgICAgICAgICBkYXRhWyJhd2FyZHMiXSA9IHsidGl0bGUiOiBuYW1lLCAiZ3JvdXBzIjogW119CiAgICAgICAgICAgIGVsaWYgc2VjdGlvbiA9PSAiY291cnNlcyI6CiAgICAgICAgICAgICAgICBkYXRhWyJjb3Vyc2VzIl0gPSB7InRpdGxlIjogbmFtZSwgImdyb3VwcyI6IFtdfQogICAgICAgICAgICBncm91cCA9IHN1YiA9IHllYXIgPSBOb25lCiAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgICMg5oiq6Iez5pel5pyfCiAgICAgICAgbV9hc29mID0gcmUubWF0Y2gociJe77yI57uf6K6h5oiq6IezKC4rPynvvIkkIiwgcmF3KQogICAgICAgIGlmIG1fYXNvZjoKICAgICAgICAgICAgZGF0YVsibWV0YSJdWyJhc09mIl0gPSBtX2Fzb2YuZ3JvdXAoMSkKICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgbTIgPSBSRV9IMi5tYXRjaChyYXcpCiAgICAgICAgaWYgbTIgYW5kIHNlY3Rpb24gaW4gKCJsaXRlcmF0dXJlIiwgImF3YXJkcyIpOgogICAgICAgICAgICBjb250YWluZXIgPSBkYXRhW3NlY3Rpb25dCiAgICAgICAgICAgIGdyb3VwID0geyJ0aXRsZSI6IG0yLmdyb3VwKDIpLCAiaXRlbXMiOiBbXSwgInllYXJzIjogW10sICJzdWJzIjogW119CiAgICAgICAgICAgIGNvbnRhaW5lclsiZ3JvdXBzIl0uYXBwZW5kKGdyb3VwKQogICAgICAgICAgICBzdWIgPSB5ZWFyID0gTm9uZQogICAgICAgICAgICBjb250aW51ZQoKICAgICAgICBtMyA9IFJFX0gzLm1hdGNoKHJhdykKICAgICAgICBpZiBtMyBhbmQgZ3JvdXAgaXMgbm90IE5vbmU6CiAgICAgICAgICAgIHN1YiA9IHsidGl0bGUiOiBtMy5ncm91cCgyKSwgIml0ZW1zIjogW10sICJ5ZWFycyI6IFtdfQogICAgICAgICAgICBncm91cFsic3VicyJdLmFwcGVuZChzdWIpCiAgICAgICAgICAgIHllYXIgPSBOb25lCiAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgIG00ID0gUkVfWUVBUi5tYXRjaChyYXcpCiAgICAgICAgaWYgbTQgYW5kIHN1YiBpcyBub3QgTm9uZToKICAgICAgICAgICAgeWVhciA9IHsieWVhciI6IG00Lmdyb3VwKDEpLCAiaXRlbXMiOiBbXX0KICAgICAgICAgICAgc3ViWyJ5ZWFycyJdLmFwcGVuZCh5ZWFyKQogICAgICAgICAgICBjb250aW51ZQoKICAgICAgICB0YXJnZXQgPSBOb25lCiAgICAgICAgaWYgc3ViIGlzIG5vdCBOb25lOgogICAgICAgICAgICB0YXJnZXQgPSB5ZWFyIGlmIHllYXIgaXMgbm90IE5vbmUgZWxzZSBzdWIKICAgICAgICBlbGlmIGdyb3VwIGlzIG5vdCBOb25lOgogICAgICAgICAgICB0YXJnZXQgPSBncm91cAogICAgICAgIGVsaWYgc2VjdGlvbiA9PSAicHJvZmlsZSI6CiAgICAgICAgICAgIGRhdGFbInByb2ZpbGUiXS5hcHBlbmQocmF3KQogICAgICAgICAgICBjb250aW51ZQogICAgICAgIGVsaWYgc2VjdGlvbiA9PSAiY291cnNlcyI6CiAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgIGlmIHRhcmdldCBpcyBOb25lOgogICAgICAgICAgICBjb250aW51ZQoKICAgICAgICAjIOivvueoi++8muS4gOOAgeeglOeptueUn+ivvueoiyAvIOS6jOOAgeacrOenkeeUn+ivvueoiwogICAgICAgIGlmIHNlY3Rpb24gPT0gImNvdXJzZXMiOgogICAgICAgICAgICBjb250aW51ZQoKICAgICAgICAjIOe7hOWGheaXoOS5puWQjeWPt+eahOWwj+agh+mimO+8iOWmguOAjOiuv+iwiOOAje+8ie+8jOS/neeVmeS4uuWIhue7hOagh+etvgogICAgICAgIGlmICh0YXJnZXQgaXMgbm90IE5vbmUgYW5kIG5vdCByYXcuc3RhcnRzd2l0aCgi44CKIikKICAgICAgICAgICAgICAgIGFuZCBsZW4ocmF3KSA8PSAxMCBhbmQgbm90IHJlLnNlYXJjaChyIlvjgILvvIzvvJvvvJpdJCIsIHJhdykpOgogICAgICAgICAgICB0YXJnZXRbIml0ZW1zIl0uYXBwZW5kKHsicmF3IjogcmF3LCAibGFiZWwiOiByYXd9KQogICAgICAgICAgICBjb250aW51ZQoKICAgICAgICBpZiBzZWN0aW9uID09ICJhd2FyZHMiOgogICAgICAgICAgICB0YXJnZXRbIml0ZW1zIl0uYXBwZW5kKHBhcnNlX2F3YXJkKHJhdykpCiAgICAgICAgZWxpZiBzdWIgaXMgbm90IE5vbmUgYW5kICLokZfkvZwiIGluIChzdWJbInRpdGxlIl0gb3IgIiIpOgogICAgICAgICAgICB0YXJnZXRbIml0ZW1zIl0uYXBwZW5kKHBhcnNlX21vbm9ncmFwaChyYXcpKQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIHRhcmdldFsiaXRlbXMiXS5hcHBlbmQocGFyc2VfcGFwZXIocmF3KSkKCiAgICAjIC0tLS0g6K++56iL5Y2V54us6Kej5p6Q77yI57yW5Y+35p2h55uuICsg57uE5ZCN77yJIC0tLS0KICAgIGRhdGFbImNvdXJzZXMiXSA9IHBhcnNlX2NvdXJzZXMoYm9keSkKCiAgICAjIC0tLS0g57uf6K6hIC0tLS0KICAgIG1vbm9ncmFwaHMsIHBhcGVycywgb3RoZXJzID0gMCwgMCwgMAogICAgeWVhcnMgPSBbXQogICAgZm9yIGcgaW4gZGF0YVsibGl0ZXJhdHVyZSJdLmdldCgiZ3JvdXBzIiwgW10pOgogICAgICAgIGZvciB5IGluIGcuZ2V0KCJ5ZWFycyIsIFtdKToKICAgICAgICAgICAgcGFwZXJzICs9IGxlbih5WyJpdGVtcyJdKQogICAgICAgICAgICB5ZWFycy5hcHBlbmQoeVsieWVhciJdKQogICAgICAgIGZvciBzIGluIGcuZ2V0KCJzdWJzIiwgW10pOgogICAgICAgICAgICBpZiAi6JGX5L2cIiBpbiBzWyJ0aXRsZSJdOgogICAgICAgICAgICAgICAgbW9ub2dyYXBocyArPSBsZW4oc1siaXRlbXMiXSkKICAgICAgICAgICAgZWxzZToKICAgICAgICAgICAgICAgIGZvciB5IGluIHMuZ2V0KCJ5ZWFycyIsIFtdKToKICAgICAgICAgICAgICAgICAgICBwYXBlcnMgKz0gbGVuKHlbIml0ZW1zIl0pCiAgICAgICAgICAgICAgICAgICAgeWVhcnMuYXBwZW5kKHlbInllYXIiXSkKICAgICAgICAgICAgICAgIGlmIG5vdCBzLmdldCgieWVhcnMiKToKICAgICAgICAgICAgICAgICAgICBvdGhlcnMgKz0gbGVuKHNbIml0ZW1zIl0pCiAgICBkYXRhWyJzdGF0cyJdID0gewogICAgICAgICJtb25vZ3JhcGhzIjogbW9ub2dyYXBocywKICAgICAgICAicGFwZXJzIjogcGFwZXJzLAogICAgICAgICJwYXBlclllYXJzIjogbGVuKHNldCh5ZWFycykpLAogICAgICAgICJ5ZWFyUmFuZ2UiOiAobWluKHllYXJzKSArICLigJMiICsgbWF4KHllYXJzKSkgaWYgeWVhcnMgZWxzZSAiIiwKICAgIH0KICAgIHJldHVybiBkYXRhCgoKZGVmIHBhcnNlX2NvdXJzZXMobGluZXMpOgogICAgIiIi5Y2V54us6Kej5p6Q44CQ5byA6K6+6K++56iL44CR77yM6L+U5ZueIHtncm91cHM6W3t0aXRsZSwgaXRlbXM6Wy4uLl19XX3jgIIiIiIKICAgIGdyb3VwcyA9IFtdCiAgICBpbnNpZGUgPSBGYWxzZQogICAgZm9yIHJhdyBpbiBsaW5lczoKICAgICAgICBpZiByYXcuc3RhcnRzd2l0aCgi44CQIik6CiAgICAgICAgICAgIGluc2lkZSA9IHJhdyA9PSAi44CQ5byA6K6+6K++56iL44CRIgogICAgICAgICAgICBjb250aW51ZQogICAgICAgIGlmIG5vdCBpbnNpZGU6CiAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgbTIgPSBSRV9IMi5tYXRjaChyYXcpCiAgICAgICAgaWYgbTI6CiAgICAgICAgICAgIGdyb3Vwcy5hcHBlbmQoeyJ0aXRsZSI6IG0yLmdyb3VwKDIpLCAiaXRlbXMiOiBbXX0pCiAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgbW4gPSBSRV9OVU1fSVRFTS5tYXRjaChyYXcpCiAgICAgICAgaWYgbW4gYW5kIGdyb3VwczoKICAgICAgICAgICAgZ3JvdXBzWy0xXVsiaXRlbXMiXS5hcHBlbmQobW4uZ3JvdXAoMikpCiAgICAgICAgZWxpZiBncm91cHMgYW5kIG5vdCByYXcuc3RhcnRzd2l0aCgi44CQIik6CiAgICAgICAgICAgICMg5Y+v6IO95piv5pyq57yW5Y+355qE6K++56iL5ZCNCiAgICAgICAgICAgIGlmIGxlbihyYXcpIDwgNDA6CiAgICAgICAgICAgICAgICBncm91cHNbLTFdWyJpdGVtcyJdLmFwcGVuZChyYXcpCiAgICByZXR1cm4geyJncm91cHMiOiBncm91cHN9CgoKZGVmIG1haW4oKToKICAgIGlmIG5vdCBET0NYLmV4aXN0cygpOgogICAgICAgIHByaW50KCLmib7kuI3liLAgZG9jeO+8miVzIiAlIERPQ1gsIGZpbGU9c3lzLnN0ZGVycikKICAgICAgICByZXR1cm4gMQogICAgbGluZXMgPSByZWFkX3BhcmFncmFwaHMoRE9DWCkKICAgIGRhdGEgPSBwYXJzZShsaW5lcykKICAgIE9VVC5wYXJlbnQubWtkaXIocGFyZW50cz1UcnVlLCBleGlzdF9vaz1UcnVlKQogICAgT1VULndyaXRlX3RleHQoanNvbi5kdW1wcyhkYXRhLCBlbnN1cmVfYXNjaWk9RmFsc2UsIGluZGVudD0xKSwgZW5jb2Rpbmc9InV0Zi04IikKCiAgICBzdCA9IGRhdGFbInN0YXRzIl0KICAgIHByaW50KCLmrrXokL3vvJolZCDihpIgJXMiICUgKGxlbihsaW5lcyksIE9VVC5yZWxhdGl2ZV90byhST09UKSkpCiAgICBwcmludCgi6JGX5L2c77yaJWQg6YOoIiAlIHN0WyJtb25vZ3JhcGhzIl0pCiAgICBwcmludCgi6K665paH77yaJWQg56+H77yIJWQg5Liq5bm05Lu977yMJXPvvIkiICUgKHN0WyJwYXBlcnMiXSwgc3RbInBhcGVyWWVhcnMiXSwgc3RbInllYXJSYW5nZSJdKSkKICAgIHByaW50KCLor77nqIvnu4TvvJolcyIgJSAi44CBIi5qb2luKAogICAgICAgICIlcyAlZCDpl6giICUgKGdbInRpdGxlIl0sIGxlbihnWyJpdGVtcyJdKSkgZm9yIGcgaW4gZGF0YVsiY291cnNlcyJdWyJncm91cHMiXSkpCiAgICBwcmludCgi6JGX6L+w5p2/5Z2X77yaIikKICAgIGZvciBnIGluIGRhdGFbImxpdGVyYXR1cmUiXS5nZXQoImdyb3VwcyIsIFtdKToKICAgICAgICBzdWJzID0gWyIlcyglZCkiICUgKHNbInRpdGxlIl0sIHN1bShsZW4oeVsiaXRlbXMiXSkgZm9yIHkgaW4gc1sieWVhcnMiXSkgb3IgbGVuKHNbIml0ZW1zIl0pKQogICAgICAgICAgICAgICAgZm9yIHMgaW4gZy5nZXQoInN1YnMiLCBbXSldCiAgICAgICAgZGlyZWN0ID0gc3VtKGxlbih5WyJpdGVtcyJdKSBmb3IgeSBpbiBnLmdldCgieWVhcnMiLCBbXSkpCiAgICAgICAgcHJpbnQoIiAgwrcgJXMg4oaSIOebtOWxniAlZCDmnaHvvIzlrZDnu4QgJXMiICUgKGdbInRpdGxlIl0sIGRpcmVjdCwgIuOAgSIuam9pbihzdWJzKSBvciAi5pegIikpCiAgICBwcmludCgi6I635aWW5p2/5Z2X77yaIikKICAgIGZvciBnIGluIGRhdGFbImF3YXJkcyJdLmdldCgiZ3JvdXBzIiwgW10pOgogICAgICAgIHN1YnMgPSBbIiVzKCVkKSIgJSAoc1sidGl0bGUiXSwgbGVuKHNbIml0ZW1zIl0pKSBmb3IgcyBpbiBnLmdldCgic3VicyIsIFtdKV0KICAgICAgICBkaXJlY3QgPSBsZW4oZy5nZXQoIml0ZW1zIiwgW10pKSArIHN1bShsZW4oeVsiaXRlbXMiXSkgZm9yIHkgaW4gZy5nZXQoInllYXJzIiwgW10pKQogICAgICAgIHByaW50KCIgIMK3ICVzIOKGkiDnm7TlsZ4gJWQg5p2h77yM5a2Q57uEICVzIiAlIChnWyJ0aXRsZSJdLCBkaXJlY3QsICLjgIEiLmpvaW4oc3Vicykgb3IgIuaXoCIpKQogICAgcmV0dXJuIDAKCgppZiBfX25hbWVfXyA9PSAiX19tYWluX18iOgogICAgcmFpc2UgU3lzdGVtRXhpdChtYWluKCkpCg==
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+从《吴承学教授简介》docx 生成站点「著述表」数据。
+
+用法：
+    python3 build_works_data.py
+
+输入：吴承学教授简介（20260803）.docx
+输出：site/assets/data/works.json
+
+设计原则：
+  - 只做「结构化切分」，不篡改原文。每条都保留 raw 原文，前端可回退显示。
+  - 老师日后增补条目，只需更新 docx 再重跑本脚本，无需改前端代码。
+"""
+
+import datetime
+import json
+import re
+import sys
+import zipfile
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+DOCX = ROOT / "吴承学教授简介（20260803）.docx"
+OUT = ROOT / "site" / "assets" / "data" / "works.json"
+
+CN_NUM = "一二三四五六七八九十"
+RE_H1 = re.compile(r"^【(.+?)】$")
+RE_H2 = re.compile(r"^([" + CN_NUM + r"]+)、(.+)$")
+RE_H3 = re.compile(r"^（([" + CN_NUM + r"]+)）(.+)$")
+RE_YEAR = re.compile(r"^(\d{4})年$")
+RE_ITEM = re.compile(r"^《(.+?)》(.*)$", re.S)
+RE_NUM_ITEM = re.compile(r"^(\d+)[．.、]\s*(.+)$")
+
+
+# --------------------------------------------------------------------------
+# 读取
+# --------------------------------------------------------------------------
+def read_paragraphs(path: Path):
+    """按段落抽取 docx 纯文本（保持原始顺序）。"""
+    with zipfile.ZipFile(path) as z:
+        xml = z.read("word/document.xml").decode("utf-8")
+    lines = []
+    for p in re.findall(r"<w:p[ >].*?</w:p>", xml, re.S):
+        t = "".join(re.findall(r"<w:t[^>]*>(.*?)</w:t>", p, re.S))
+        t = re.sub(r"<[^>]+>", "", t)
+        t = (
+            t.replace("&amp;", "&")
+            .replace("&lt;", "<")
+            .replace("&gt;", ">")
+            .replace("\u200f", "")
+            .replace("\ufeff", "")
+            .strip()
+        )
+        if t:
+            lines.append(t)
+    return lines
+
+
+# --------------------------------------------------------------------------
+# 条目字段抽取
+# --------------------------------------------------------------------------
+RE_SIGN = re.compile(r"（(署名[^）]*|与[^）]*合作|与[^）]*先生合作)）")
+RE_JOURNAL = re.compile(r"《([^《》]+)》")
+RE_ISSUE = re.compile(r"(\d{4})年第(\d+)期")
+RE_PAGES = re.compile(r"第([\d０-９]+[—\-－~～][\d０-９]+|[\d０-９]+)\s*页")
+RE_PRESS_DATE = re.compile(r"(\d{4})年(\d{1,2})月(\d{1,2})日")
+RE_PUB_YEAR = re.compile(r"(\d{4})年(\d{1,2})?月?")
+RE_PUBLISHER = re.compile(
+    r"([\u4e00-\u9fa5·]{2,12}?(?:出版社|书局|书店|印书馆|印书馆有限公司|出版有限公司|有限公司|书社|文献出版社|古籍出版社))"
+)
+RE_EDITION = re.compile(r"^《(.+?)》(（([^）]+)）)?")
+
+
+def parse_signature(text: str):
+    """署名 / 合作情况。"""
+    m = RE_SIGN.search(text)
+    if not m:
+        return None
+    s = m.group(1)
+    if s.startswith("署名"):
+        return {"type": "pseudonym", "text": s.replace("署名", "")}
+    return {"type": "coauthor", "text": s.replace("与", "").replace("合作", "")}
+
+
+def parse_paper(raw: str):
+    """论文 / 序跋 / 随笔等：题名 + 出处信息。"""
+    item = {"raw": raw, "titleMark": "《"}
+    m = RE_ITEM.match(raw)
+    if m:
+        item["title"] = m.group(1)
+        rest = m.group(2)
+    else:
+        # 不以书名号开头的条目，如「2011年起，主编“中国古代文体学研究丛书”（与彭玉平合编），北京大学出版社」
+        # 题名统一用书名号呈现（「2 主编」除外，向下兼容）
+        m2 = re.match(r'^(.*?)[“"]([^“”"]+)[”"](.*)$', raw)
+        if m2:
+            item["prefix"] = m2.group(1).strip()
+            item["title"] = m2.group(2)
+            item["titleMark"] = "《"
+            rest = m2.group(3)
+        else:
+            m3 = re.match(r'^(.*?)《(.+?)》(.*)$', raw)
+            if m3:
+                item["prefix"] = m3.group(1).strip()
+                item["title"] = m3.group(2)
+                rest = m3.group(3)
+            else:
+                item["titleMark"] = ""
+                item["title"] = raw.rstrip("。")
+                rest = ""
+    item["signature"] = parse_signature(rest or raw)
+
+    rest = re.sub(r"^[，,、]\s*", "", rest.strip()).rstrip("。")
+
+    # 刊物 / 报纸 / 文集
+    jm = RE_JOURNAL.search(rest)
+    issue = RE_ISSUE.search(rest)
+    pdate = RE_PRESS_DATE.search(rest)
+    pages = RE_PAGES.search(rest)
+
+    if issue:
+        item["venue"] = jm.group(1) if jm else ""
+        item["issue"] = issue.group(1) + "年第" + issue.group(2) + "期"
+        item["kind"] = "journal"
+    elif pdate:
+        # 报纸日期：往前取《》里的报刊名
+        item["venue"] = jm.group(1) if jm else ""
+        item["issue"] = "%s年%s月%s日" % (pdate.group(1), pdate.group(2), pdate.group(3))
+        item["kind"] = "newspaper"
+    elif "收入" in rest or "载" in rest or "主编" in rest:
+        item["venue"] = jm.group(1) if jm else ""
+        item["issue"] = ""
+        item["kind"] = "anthology"
+    else:
+        item["venue"] = jm.group(1) if jm else ""
+        item["issue"] = ""
+        item["kind"] = "other"
+
+    if pages:
+        item["pages"] = pages.group(1)
+    item["rest"] = rest
+    return item
+
+
+def parse_monograph(raw: str):
+    """著作：书名 + 版次 + 出版社 + 年月。"""
+    item = {"raw": raw}
+    m = RE_EDITION.match(raw)
+    item["title"] = m.group(1) if m else raw
+    item["edition"] = (m.group(3) or "").strip() if m else ""
+    body = raw[m.end():] if m else raw
+    body = re.sub(r"^[，,]\s*", "", body.strip())
+
+    years = RE_PUB_YEAR.findall(body)
+    item["year"] = years[-1][0] if years else ""
+    pm = RE_PUBLISHER.search(body)
+    if pm:
+        item["publisher"] = pm.group(1)
+    else:
+        # 形如「三聯書店（香港）有限公司」等非常规名
+        pm2 = re.search(r"^([^，,0-9]+?)(?=\d{4}年)", body)
+        item["publisher"] = pm2.group(1).strip() if pm2 else body
+    if "合作" in raw or "与" in raw:
+        item["coauthor"] = True
+    item["body"] = body
+    return item
+
+
+def parse_award(raw: str):
+    """获奖：年份 + 事项。"""
+    m = re.match(r"^(\d{4})年[，,]?(.*)$", raw)
+    return {
+        "raw": raw,
+        "year": m.group(1) if m else "",
+        "text": (m.group(2) if m else raw).rstrip("。"),
+    }
+
+
+# --------------------------------------------------------------------------
+# 主解析：状态机
+# --------------------------------------------------------------------------
+def parse(lines):
+    body = lines[1:] if lines and not lines[0].startswith("【") else lines
+
+    data = {
+        "meta": {
+            "person": "吴承学",
+            "title": "吴承学教授著述表",
+            "generated": datetime.date.today().isoformat(),
+            "source": DOCX.name,
+            "asOf": "",
+        },
+        "profile": [],
+        "courses": [],
+        "literature": [],   # 【著述情况】
+        "awards": [],       # 【获奖情况】
+    }
+
+    section = None          # 顶层：【基本信息】…
+    group = None            # 二级：一、研究成果
+    sub = None              # 三级：（一）著作
+    year = None             # 论文年份
+
+    def current_list():
+        """返回当前应写入的条目容器。"""
+        if section == "profile":
+            return data["profile"]
+        if section == "courses":
+            return data["courses"]
+        if section == "literature":
+            return data["literature"]
+        if section == "awards":
+            return data["awards"]
+        return None
+
+    for raw in body:
+        m1 = RE_H1.match(raw)
+        if m1:
+            name = m1.group(1)
+            section = {"基本信息": "profile", "开设课程": "courses",
+                       "著述情况": "literature", "获奖情况": "awards"}.get(name, name)
+            if section == "literature":
+                data["literature"] = {"title": name, "groups": []}
+            elif section == "awards":
+                data["awards"] = {"title": name, "groups": []}
+            elif section == "courses":
+                data["courses"] = {"title": name, "groups": []}
+            group = sub = year = None
+            continue
+
+        # 截至日期
+        m_asof = re.match(r"^（统计截至(.+?)）$", raw)
+        if m_asof:
+            data["meta"]["asOf"] = m_asof.group(1)
+            continue
+
+        m2 = RE_H2.match(raw)
+        if m2 and section in ("literature", "awards"):
+            container = data[section]
+            group = {"title": m2.group(2), "items": [], "years": [], "subs": []}
+            container["groups"].append(group)
+            sub = year = None
+            continue
+
+        m3 = RE_H3.match(raw)
+        if m3 and group is not None:
+            sub = {"title": m3.group(2), "items": [], "years": []}
+            group["subs"].append(sub)
+            year = None
+            continue
+
+        m4 = RE_YEAR.match(raw)
+        if m4 and sub is not None:
+            year = {"year": m4.group(1), "items": []}
+            sub["years"].append(year)
+            continue
+
+        target = None
+        if sub is not None:
+            target = year if year is not None else sub
+        elif group is not None:
+            target = group
+        elif section == "profile":
+            data["profile"].append(raw)
+            continue
+        elif section == "courses":
+            continue
+
+        if target is None:
+            continue
+
+        # 课程：一、研究生课程 / 二、本科生课程
+        if section == "courses":
+            continue
+
+        # 组内无书名号的小标题（如「访谈」），保留为分组标签
+        if (target is not None and not raw.startswith("《")
+                and len(raw) <= 10 and not re.search(r"[。，；：]$", raw)):
+            target["items"].append({"raw": raw, "label": raw})
+            continue
+
+        if section == "awards":
+            target["items"].append(parse_award(raw))
+        elif sub is not None and "著作" in (sub["title"] or ""):
+            target["items"].append(parse_monograph(raw))
+        else:
+            target["items"].append(parse_paper(raw))
+
+    # ---- 课程单独解析（编号条目 + 组名） ----
+    data["courses"] = parse_courses(body)
+
+    # ---- 统计 ----
+    monographs, papers, others = 0, 0, 0
+    years = []
+    for g in data["literature"].get("groups", []):
+        for y in g.get("years", []):
+            papers += len(y["items"])
+            years.append(y["year"])
+        for s in g.get("subs", []):
+            if "著作" in s["title"]:
+                monographs += len(s["items"])
+            else:
+                for y in s.get("years", []):
+                    papers += len(y["items"])
+                    years.append(y["year"])
+                if not s.get("years"):
+                    others += len(s["items"])
+    data["stats"] = {
+        "monographs": monographs,
+        "papers": papers,
+        "paperYears": len(set(years)),
+        "yearRange": (min(years) + "–" + max(years)) if years else "",
+    }
+    return data
+
+
+def parse_courses(lines):
+    """单独解析【开设课程】，返回 {groups:[{title, items:[...]}]}。"""
+    groups = []
+    inside = False
+    for raw in lines:
+        if raw.startswith("【"):
+            inside = raw == "【开设课程】"
+            continue
+        if not inside:
+            continue
+        m2 = RE_H2.match(raw)
+        if m2:
+            groups.append({"title": m2.group(2), "items": []})
+            continue
+        mn = RE_NUM_ITEM.match(raw)
+        if mn and groups:
+            groups[-1]["items"].append(mn.group(2))
+        elif groups and not raw.startswith("【"):
+            # 可能是未编号的课程名
+            if len(raw) < 40:
+                groups[-1]["items"].append(raw)
+    return {"groups": groups}
+
+
+def main():
+    if not DOCX.exists():
+        print("找不到 docx：%s" % DOCX, file=sys.stderr)
+        return 1
+    lines = read_paragraphs(DOCX)
+    data = parse(lines)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    st = data["stats"]
+    print("段落：%d → %s" % (len(lines), OUT.relative_to(ROOT)))
+    print("著作：%d 部" % st["monographs"])
+    print("论文：%d 篇（%d 个年份，%s）" % (st["papers"], st["paperYears"], st["yearRange"]))
+    print("课程组：%s" % "、".join(
+        "%s %d 门" % (g["title"], len(g["items"])) for g in data["courses"]["groups"]))
+    print("著述板块：")
+    for g in data["literature"].get("groups", []):
+        subs = ["%s(%d)" % (s["title"], sum(len(y["items"]) for y in s["years"]) or len(s["items"]))
+                for s in g.get("subs", [])]
+        direct = sum(len(y["items"]) for y in g.get("years", []))
+        print("  · %s → 直属 %d 条，子组 %s" % (g["title"], direct, "、".join(subs) or "无"))
+    print("获奖板块：")
+    for g in data["awards"].get("groups", []):
+        subs = ["%s(%d)" % (s["title"], len(s["items"])) for s in g.get("subs", [])]
+        direct = len(g.get("items", [])) + sum(len(y["items"]) for y in g.get("years", []))
+        print("  · %s → 直属 %d 条，子组 %s" % (g["title"], direct, "、".join(subs) or "无"))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
