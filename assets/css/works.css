@@ -3,7 +3,62 @@
    设计语言承接 style.css：宣纸 · 墨 · 朱印 · 暗金
    ========================================================= */
 
-/* ============ 入口：紧贴「吴承学 著作文库」标题的朱印 ============ */
+/* ============ 入口：左缘水波纹（静为淡影，移近则全彩） ============ */
+.works-entry-mark {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    z-index: 6;
+    display: block;
+    padding: 0;
+    border: 0;
+    background: none;
+    line-height: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.works-entry-mark img {
+    display: block;
+    height: min(46vh, 520px);
+    width: auto;
+    opacity: .3;
+    filter: saturate(.5);
+    transition: opacity .4s var(--ease), filter .4s var(--ease), transform .4s var(--ease);
+}
+
+.works-entry-mark:hover img,
+.works-entry-mark:focus-visible img {
+    opacity: 1;
+    filter: none;
+    transform: translateX(6px);
+}
+
+.works-entry-mark__hint {
+    position: absolute;
+    left: calc(100% + 12px);
+    top: 50%;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: .32em;
+    font-family: var(--font-serif);
+    font-size: 13px;
+    color: var(--ink-soft);
+    opacity: 0;
+    transform: translateY(-50%) translateX(-6px);
+    transition: opacity .32s var(--ease), transform .32s var(--ease);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.works-entry-mark:hover .works-entry-mark__hint,
+.works-entry-mark:focus-visible .works-entry-mark__hint {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* ============ （旧）入口：贴着馆名的朱印 ============ */
 .works-entry {
     position: fixed;
     inset: 0;
@@ -1010,27 +1065,9 @@
     .works-tab__count { font-size: 10px; letter-spacing: 0; white-space: nowrap; }
     .mono__cover--plain .mono__fn { font-size: 16px; letter-spacing: .1em; }
 
-    /* 窄屏下场景图被大幅裁切，标题旁的印章可能跑出屏幕，退回右下角 */
-    .works-entry__stage {
-        position: static;
-        width: auto;
-        height: auto;
-        aspect-ratio: auto;
-        transform: none;
-    }
-
-    .works-seal {
-        left: auto;
-        top: auto;
-        right: 5vw;
-        bottom: 8vh;
-        position: fixed;
-        z-index: 30;
-    }
-
-    .works-seal__stamp { width: 56px; height: 56px; padding: 4px; }
-    .works-seal__char { font-size: 19px; }
-    .works-seal__hint { display: none; }
+    /* 窄屏上素材收窄，避免遮挡书卡 */
+    .works-entry-mark img { height: min(28vh, 280px); }
+    .works-entry-mark__hint { display: none; }
 }
 
 @media (max-width: 560px) {

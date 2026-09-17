@@ -6,7 +6,7 @@
     <title>著作文库 · 吴承学</title>
     <link rel="stylesheet" href="assets/css/style.css?v=20260905">
     <link rel="stylesheet" href="assets/css/library.css?v=20260905">
-    <link rel="stylesheet" href="assets/css/works.css?v=20260917e">
+    <link rel="stylesheet" href="assets/css/works.css?v=20260917f">
 </head>
 <body class="page-library">
 
@@ -39,23 +39,11 @@
     <!-- 退出按钮 -->
     <button class="logout-mini" id="logoutBtn" type="button" title="退出登录">退出</button>
 
-    <!-- 入口：著述介绍（朱印，贴着场景图上的馆名） -->
-    <div class="works-entry">
-        <div class="works-entry__stage">
-            <button class="works-seal" id="worksSeal" type="button" aria-label="打开吴承学教授著述介绍">
-                <span class="works-seal__stamp" aria-hidden="true">
-                    <span class="works-seal__char">著</span>
-                    <span class="works-seal__char">述</span>
-                    <span class="works-seal__char">介</span>
-                    <span class="works-seal__char">绍</span>
-                </span>
-                <span class="works-seal__hint">
-                    <strong>著述介绍</strong>
-                    <span>著作 · 论文 · 文编 · 简介</span>
-                </span>
-            </button>
-        </div>
-    </div>
+    <!-- 入口：著述介绍（左缘水波纹，默认淡影，hover 全彩） -->
+    <button class="works-entry-mark" id="worksSeal" type="button" aria-label="打开吴承学教授著述介绍">
+        <img src="assets/img/works-entry-marks.png" alt="" draggable="false">
+        <span class="works-entry-mark__hint">著述介绍</span>
+    </button>
 
     <!-- 著述表：仿古籍册页 -->
     <div class="works-overlay hidden" id="worksOverlay" aria-hidden="true"
@@ -160,6 +148,6 @@
 
     <script src="assets/js/books.js?v=20260905"></script>
     <script src="assets/js/library.js?v=20260906"></script>
-    <script src="assets/js/works.js?v=20260917e"></script>
+    <script src="assets/js/works.js?v=20260917f"></script>
 </body>
 </html>
