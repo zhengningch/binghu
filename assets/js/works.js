@@ -18,7 +18,8 @@
         { re: /中国古代文体形态研究/, id: 'wenti-xingtai-3' },
         { re: /冰壶秋月/, id: 'binghu-qiuyue' },
         { re: /旨永神遥明小品/, id: 'zhi-yong-shen-xia' },
-        { re: /中国古代文体学史/, id: 'wenti-xueshi-1' }
+        { re: /中国古代文体学史/, id: 'wenti-xueshi-1' },
+        { re: /先秦两汉文体学史/, id: 'wenti-xueshi-1' }   // 与《中国古代文体学史》第一卷同为库内全文
     ];
 
     // 书影映射（assets/img/books/ 内已有图；缺图者用 CSS 仿古籍函套）
@@ -362,10 +363,10 @@
             '<section class="works-pane" data-pane="awards">' + renderAwards() + '</section>' +
             '</div></div>';
 
-        var foot = '<footer class="works-foot">' +
-            '<span>资料来源：《吴承学教授简介》' + (data.meta.asOf ? '（统计截至' + esc(data.meta.asOf) + '）' : '') + '</span>' +
-            '<span>冰壶秋月 · 单斋</span>' +
-            '</footer>';
+        var foot = data.meta.asOf
+            ? '<footer class="works-foot works-foot--end">' +
+            '<span>统计截至 ' + esc(data.meta.asOf) + '</span></footer>'
+            : '';
 
         mount.innerHTML = '<div class="works-frame">' + head + body + foot + '</div>';
         built = true;

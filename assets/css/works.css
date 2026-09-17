@@ -936,6 +936,12 @@
     letter-spacing: .06em;
 }
 
+/* 仅一行时居中 */
+.works-foot--end {
+    justify-content: center;
+    letter-spacing: .14em;
+}
+
 /* ============ 关闭按钮 ============ */
 .works-close {
     position: fixed;
